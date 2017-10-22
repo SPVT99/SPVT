@@ -1,5 +1,4 @@
-using Microsoft.EntityFrameworkCore;
-using SPVT.Models;
+using System;
 
 namespace SPVT.Models
 {
