@@ -5,6 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SPVT.Models;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace SPVT.Controllers
 {
@@ -19,14 +21,14 @@ namespace SPVT.Controllers
         {
             ViewData["Message"] = "Welcome to SPVT, this application will provide you with the ability to record vehicle violations at the Amazon account, this information will then be transmitted to you, to send to your account manager, and L.P, if you have any questions feel free to contact your supervisor, or your account manager for more information.";
 
-           
+            
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Your Contact Information.";
 
             return View();
         }
