@@ -1,25 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Encodings.Web;
+using SPVT.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace SPVT.Controllers
 {
-    public class HelloWorldController : Controller
-
+    public class HelloWorld
     {
-        // 
-        // GET: /HelloWorld/
 
-        public string Index()
+        public class HelloWorldController : Controller
         {
-            return "This is my default action...";
-        }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
+            // GET: /Automobile/
 
-        public string Welcome()
-        {
-            return "This is the Welcome action method...";
+            public IActionResult Index()
+            {
+                return View();
+            }
+
+            // 
+            // GET: /Automobile/Welcome/ 
+
+            public string Welcome()
+            {
+                return "This is the Welcome action method...";
+            }
         }
     }
 }
