@@ -6,26 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using SPVT.Models;
 using Microsoft.EntityFrameworkCore;
-
+using System.Text.Encodings.Web;
 
 namespace SPVT.Controllers
 {
-    public class AutomobileController : Controller
-    {
+    
+    
 
-        // GET: /Automobile/
-
-        public IActionResult Index()
+        public class AutomobileController : Controller
         {
-            return View();
-        }
 
-        // 
-        // GET: /Automobile/Welcome/ 
+            // GET: /Automobile/
 
-        public string Welcome()
-        {
-            return "This is the Welcome action method...";
+            public IActionResult Index()
+            {
+                return View();
+            } 
+
+            
         }
-    }
+    
 }
