@@ -33,8 +33,8 @@ namespace SPVT
          public void ConfigureServices(IServiceCollection services)
          {
             services.AddMvc();
-        services.AddDbContext<SPVTDbContext>(options
-                                                => options.UseSqlite("Data Source=SPVT.db"));
+        services.AddDbContext<ViolationsContext>(options
+                                                => options.UseSqlite("Data Source=Violations.db"));
          }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
