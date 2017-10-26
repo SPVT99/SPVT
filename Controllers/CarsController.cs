@@ -19,8 +19,15 @@ namespace SPVT.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
+            var Autos = from a in _context.Cars
+                                select a;
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                Autos = Autos.Where(a => a.Make.Contains(searchString));
+            }
+
             return View(await _context.Cars.ToListAsync());
         }
 
