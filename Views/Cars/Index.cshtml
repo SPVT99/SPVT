@@ -1,4 +1,4 @@
-@model IEnumerable<SPVT.Models.Cars>
+@model SPVT.Models.CarsMakeViewModel;
 
 @{
     ViewData["Title"] = "Vehicle Creation";
@@ -10,44 +10,50 @@
     <a asp-action="Create">Create New Vehicle</a>
 </p>
 
-<form asp-controller="Cars" asp-action="Index">
-
+<form asp-controller="Cars" asp-action="Index" method="get">
 <p>
-    Title: <input type="text" name="searchString">
-    <input type="submit" value="Filter" />
+    <select asp-for="carsMake" asp-items="Model.Make">
+        <option value="">All</option>
+    </select>
+
+
+search: <input type="text" name="searchString" placeholder="Search Vehicle">
+<input type="submit" value="Filter" />
+
 </p>
 
 </form>
 
+
 <table class="table">
     <thead>
-        <tr>
+        <tr>    
                 <th>
-                    @Html.DisplayNameFor(model => model.Year)
+                    @Html.DisplayNameFor(model => model.cars[0].Year)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Make)
+                    @Html.DisplayNameFor(model => model.cars[0].Make)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Model)
+                    @Html.DisplayNameFor(model => model.cars[0].Model)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Color)
+                    @Html.DisplayNameFor(model => model.cars[0].Color)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.licensePlate)
+                    @Html.DisplayNameFor(model => model.cars[0].licensePlate)
                 </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+@foreach (var item in Model.cars) {
+        <tr>  
             <td>
                 @Html.DisplayFor(modelItem => item.Year)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Make)
+             @Html.DisplayFor(modelItem => item.Make)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Model)
@@ -56,7 +62,7 @@
                 @Html.DisplayFor(modelItem => item.Color)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.licensePlate)
+                 @Html.DisplayFor(modelItem => item.licensePlate)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
@@ -67,3 +73,4 @@
 }
     </tbody>
 </table>
+

@@ -19,17 +19,36 @@ namespace SPVT.Controllers
         }
 
         // GET: Cars
-        public async Task<IActionResult> Index(string searchString)
-        {
-            var Autos = from a in _context.Cars
-                                select a;
-            if(!String.IsNullOrEmpty(searchString))
+        public async Task<IActionResult> Index(string carsMake, string searchString)
+         {
+            // use LINQ to get list of Make
+            IQueryable<string> MakeQuery = from c in _context.Cars
+                                           orderby c.Make
+                                           select c.Make;
+
+            var cars = from m in _context.Cars
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
             {
-                Autos = Autos.Where(a => a.Make.Contains(searchString));
+                cars = cars.Where(s => s.Make.Contains(searchString));
             }
 
-            return View(await _context.Cars.ToListAsync());
+            if (!String.IsNullOrEmpty(carsMake))  
+            {
+                cars = cars.Where(x => x.Make == (carsMake));
+            }
+
+            var carsMakeVM = new CarsMakeViewModel();
+            carsMakeVM.Make = new SelectList(await MakeQuery.Distinct().ToListAsync());
+            carsMakeVM.cars = await cars.ToListAsync();
+
+            return View(carsMakeVM);
         }
+       
+
+           //return View(await _context.Cars.ToListAsync());
+        
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -52,6 +71,9 @@ namespace SPVT.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
+           
+
+
             return View();
         }
 

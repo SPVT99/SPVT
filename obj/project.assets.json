@@ -13121,11 +13121,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\ryanb\\Desktop\\SPVT\\SPVT.csproj",
+      "projectUniqueName": "C:\\Users\\ryanb\\Desktop\\SPVT\\SPVT.csproj",
       "projectName": "SPVT",
-      "projectPath": "c:\\Users\\ryanb\\Desktop\\SPVT\\SPVT.csproj",
+      "projectPath": "C:\\Users\\ryanb\\Desktop\\SPVT\\SPVT.csproj",
       "packagesPath": "C:\\Users\\ryanb\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\ryanb\\Desktop\\SPVT\\obj\\",
+      "outputPath": "C:\\Users\\ryanb\\Desktop\\SPVT\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
