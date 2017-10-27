@@ -21,34 +21,34 @@ namespace SPVT.Controllers
         // GET: Cars
         public async Task<IActionResult> Index(string carsMake, string searchString)
         {
-            // use LINQ to get list of Make
-            IQueryable<string> MakeQuery = from c in _context.Cars
-                                           orderby c.Make
-                                           select c.Make;
 
             var cars = from m in _context.Cars
-                         select m;
+                       select m;
 
             if (!String.IsNullOrEmpty(searchString))
             {
                 cars = cars.Where(s => s.Make.Contains(searchString));
             }
 
-            if (!String.IsNullOrEmpty(carsMake))  
+            if (!String.IsNullOrEmpty(carsMake))
             {
                 cars = cars.Where(x => x.Make == (carsMake));
             }
 
             var carsMakeVM = new CarsMakeViewModel();
+
+            // use LINQ to get list of Make
+            IQueryable<string> MakeQuery = from c in _context.Cars
+                                           orderby c.Make
+                                           select c.Make;
             carsMakeVM.Make = new SelectList(await MakeQuery.Distinct().ToListAsync());
             carsMakeVM.cars = await cars.ToListAsync();
 
             return View(carsMakeVM);
         }
-       
 
-           //return View(await _context.Cars.ToListAsync());
-        
+
+        //return View(await _context.Cars.ToListAsync());
 
         // GET: Cars/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -71,9 +71,6 @@ namespace SPVT.Controllers
         // GET: Cars/Create
         public IActionResult Create()
         {
-           
-
-
             return View();
         }
 
@@ -82,7 +79,7 @@ namespace SPVT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Year,Make,Model,Color,licensePlate")] Cars cars)
+        public async Task<IActionResult> Create([Bind("Id,Make,Model,Color,licensePlate")] Cars cars)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +111,7 @@ namespace SPVT.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Year,Make,Model,Color,licensePlate")] Cars cars)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Make,Model,Color,licensePlate")] Cars cars)
         {
             if (id != cars.Id)
             {

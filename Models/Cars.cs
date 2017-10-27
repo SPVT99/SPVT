@@ -7,22 +7,18 @@ namespace SPVT.Models
     {
         public int Id { get; set; }
 
-       
-        [StringLength(60, MinimumLength = 3)]
-        [Required]
-        public int Year { get; set; }
-
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+  
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Make { get; set; }
 
         
-        [StringLength(60, MinimumLength = 3)]
+        //[StringLength(60, MinimumLength = 3)]
         [Required]
         public string Model { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+        //[RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Color { get; set; }

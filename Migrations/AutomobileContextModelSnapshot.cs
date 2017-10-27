@@ -23,15 +23,20 @@ namespace SPVT.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Color");
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
-                    b.Property<string>("Make");
+                    b.Property<string>("Make")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
-                    b.Property<string>("Model");
+                    b.Property<string>("Model")
+                        .IsRequired();
 
-                    b.Property<int>("Year");
-
-                    b.Property<string>("licensePlate");
+                    b.Property<string>("licensePlate")
+                        .IsRequired()
+                        .HasMaxLength(60);
 
                     b.HasKey("Id");
 
