@@ -20,7 +20,7 @@ namespace SPVT.Controllers
 
         // GET: Cars
         public async Task<IActionResult> Index(string carsMake, string searchString)
-         {
+        {
             // use LINQ to get list of Make
             IQueryable<string> MakeQuery = from c in _context.Cars
                                            orderby c.Make

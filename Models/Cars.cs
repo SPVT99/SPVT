@@ -17,7 +17,7 @@ namespace SPVT.Models
         [Required]
         public string Make { get; set; }
 
-        [RegularExpression(@"^[A-Z]+[a-zA-Z''-'\s]*$")]
+        
         [StringLength(60, MinimumLength = 3)]
         [Required]
         public string Model { get; set; }
