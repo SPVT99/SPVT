@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using  Microsoft.EntityFrameworkCore;
 using SPVT.Models;
+using Microsoft.IdentityModel;
 
 namespace SPVT
 {
@@ -37,6 +38,8 @@ namespace SPVT
 
             services.AddDbContext<AutomobileContext>(options =>
                                   options.UseSqlite("Data Source=Cars.db"));
+            
+            
 
          }
 
@@ -53,6 +56,8 @@ namespace SPVT
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {
