@@ -38,9 +38,6 @@ namespace SPVT
 
             services.AddDbContext<AutomobileContext>(options =>
                                   options.UseSqlite("Data Source=Cars.db"));
-            
-            
-
          }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
