@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "cd945696cff90a9745d51031f9ca805e22e8725c"
+    "signature": "406365c8fa5aefd31a16c49b5c33214a0e24a2ec"
   },
   "compilationOptions": {
     "defines": [
@@ -23,7 +23,10 @@
     ".NETCoreApp,Version=v2.0": {
       "SPVT/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNet.Identity.Core": "2.2.1",
           "Microsoft.AspNetCore.All": "2.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.0"
         },
@@ -119,6 +122,14 @@
         },
         "compile": {
           "lib/netstandard1.6/Microsoft.AI.DependencyCollector.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Identity.Core/2.2.1": {
+        "runtime": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
+        },
+        "compile": {
+          "lib/net45/Microsoft.AspNet.Identity.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore/2.0.0": {
@@ -4265,6 +4276,13 @@
       "sha512": "sha512-wUFteHqVHFPk32dt3oWnQWDXuIB4pBdFhlaef11xJEQ5k9TpUmgdhCB7Shc5dFT4ZWlqNDcZDXXnO4OKLXC9tA==",
       "path": "microsoft.applicationinsights.dependencycollector/2.4.1",
       "hashPath": "microsoft.applicationinsights.dependencycollector.2.4.1.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Identity.Core/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jjurNglpmcv0SLBd4Fmar8ZoJ2yqfTf6iuP3p8wVH7Nvanfo8l3qTBzq3qRQz2BQlb6iXJiDWPjcnIImVz512g==",
+      "path": "microsoft.aspnet.identity.core/2.2.1",
+      "hashPath": "microsoft.aspnet.identity.core.2.2.1.nupkg.sha512"
     },
     "Microsoft.AspNetCore/2.0.0": {
       "type": "package",

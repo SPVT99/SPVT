@@ -9,6 +9,9 @@ using Microsoft.Extensions.DependencyInjection;
 using  Microsoft.EntityFrameworkCore;
 using SPVT.Models;
 using Microsoft.IdentityModel;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Identity;
 
 namespace SPVT
 {
@@ -38,6 +41,16 @@ namespace SPVT
 
             services.AddDbContext<AutomobileContext>(options =>
                                   options.UseSqlite("Data Source=Cars.db"));
+
+            //  services.AddDbContext<UserContext>(options =>
+            //      options.UseSqlite("Data Source=Users.db"));
+
+            //  services.AddIdentity<ApplicationUser, IdentityRole>()
+            //      .AddEntityFrameworkStores<UserContext>()
+            //      .AddDefaultTokenProviders();
+
+            
+
          }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,6 +68,8 @@ namespace SPVT
             app.UseStaticFiles();
 
             app.UseAuthentication();
+
+           
 
             app.UseMvc(routes =>
             {

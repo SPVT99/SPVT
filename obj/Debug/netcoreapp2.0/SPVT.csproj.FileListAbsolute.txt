@@ -8,3 +8,4 @@ C:\Users\ryanb\Desktop\SPVT\obj\Debug\netcoreapp2.0\SPVT.AssemblyInfoInputs.cach
 C:\Users\ryanb\Desktop\SPVT\obj\Debug\netcoreapp2.0\SPVT.AssemblyInfo.cs
 C:\Users\ryanb\Desktop\SPVT\obj\Debug\netcoreapp2.0\SPVT.dll
 C:\Users\ryanb\Desktop\SPVT\obj\Debug\netcoreapp2.0\SPVT.pdb
+C:\Users\ryanb\Desktop\SPVT\obj\Debug\netcoreapp2.0\SPVT.csprojResolveAssemblyReference.cache
